@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local-only admin UI — never deploy to GitHub Pages.
+_local/
