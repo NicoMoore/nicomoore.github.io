@@ -120,11 +120,46 @@ h2 {
 }
 
 .experience {
+  position: relative;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 20px 24px;
   box-shadow: var(--shadow);
+}
+
+.experience > * { position: relative; z-index: 1; }
+
+.experience::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  bottom: -12px;
+  width: 210px;
+  height: 210px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.theme-whale::after      { background-image: url("decorations/whale.svg"); }
+.theme-volcano::after    { background-image: url("decorations/volcano.svg"); }
+.theme-earthquake::after { background-image: url("decorations/earthquake.svg"); }
+
+.theme-healthcare::after {
+  background-image: url("decorations/healthcare.svg");
+  width: 100px;
+  height: 100px;
+  right: 16px;
+  left: auto;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  background-position: center center;
 }
 
 .experience header {
